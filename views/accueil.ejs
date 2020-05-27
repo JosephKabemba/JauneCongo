@@ -1,0 +1,205 @@
+<%- include('partials/header') %>
+
+<header>
+  <div class="container">
+    <img src="/img/logo2.jpg" alt="">
+    <p class="sous-titre"><em>Chez nous, vous êtes « satisfait ou remboursé »!</em></p>
+
+    <div class="range">
+      <div class="col">
+        <h4>col</h4>
+      </div>
+
+      <div class="col">
+        <h4>col</h4>
+      </div>
+
+      <div class="col">
+        <h4>col</h4>
+      </div>
+    </div>
+
+    <div class="range">
+      <div class="col">
+        <h4>col</h4>
+      </div>
+
+      <div class="col">
+        <h3>Attention! Plus que</h3>
+        <ul id="timer">
+          <li><span class="days">00</span>
+            <p class="days_text">Days</p>
+          </li>
+          <!-- <li class="seperator">:</li> -->
+          <li><span class="hours">00</span>
+            <p class="hours_text">Hours</p>
+          </li>
+          <!-- <li class="seperator">:</li> -->
+          <li><span class="minutes">00</span>
+            <p class="minutes_text">Minutes</p>
+          </li>
+          <!-- <li class="seperator">:</li> -->
+          <li><span class="seconds">00</span>
+            <p class="seconds_text">Seconds</p>
+          </li>
+        </ul>
+        <h3>pour commander votre dose hebdomadaire de vitamines!</h3>
+      </div>
+
+      <div class="col">
+        <h4>col</h4>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<div id="produits">
+  <div class="container">
+    <h2><span>Nos produits cette semaine</span></h2>
+
+    <div class="items">
+
+      <%  result.forEach((item, i) => {%>
+
+
+      <div class="carte">
+        <a href=<%= `/items/${item.id}` %>><img src=<%= item.image %> alt=""></a>
+
+        <p><b><%= item.name %></b></p>
+
+        <p>$ <span class="qt"><%= item.prixKilo %></span>/Kilo</p>
+        <p>$ <span class="qt"><%= item.prixBouquet %></span>/bouquet de 25 grammes</p>
+        <p>$ <span class="qt"><%= item.prixBotte %></span>/botte de 500 grammes</p>
+
+        <p>Quantité encore disponible: <%= item.qteDispo%></p><br>
+
+        <a class="control" href="#">+</a>
+        <input type="text" name="" value="1">
+        <a class="control" href="#">-</a>
+
+        <button type="button" name="button">AJOUTER AU PANIER</button>
+      </div>
+
+      <%   });%>
+
+    </div>
+  </div>
+</div>
+
+
+
+<div id="produits" class="promotions">
+  <div class="container">
+    <h2><span>Promotions permanentes</span></h2>
+
+    <div class="items">
+      <div class="promo">
+        <img src="/img/parrainage.jpg">
+        <h4>
+          Parrainage – gagnez 5$!
+        </h4>
+        <p>
+          Parrainez vos amis et gagnez 5$! Remplissez ce
+        </p>
+        <a href="/">Formulaire de parrainage</a>
+        <p>
+          et votre ami recevra un courriel contenant un coupon de 20% pour sa première commande. Une fois celle-ci effectuée vous recevrez à votre tour un courriel contenant un coupon de 5$ pour votre prochaine commande de vitamines!
+        </p>
+      </div>
+      <div class="promo">
+        <img src="/img/rabais.jpg">
+        <h4>
+          Rabais fidélités – jusqu’à 10% sur toutes vos commandes!
+        </h4>
+        <strong>Rabais fidélité 1 mois</strong>
+        <p> 
+            Si vous avez dépensé plus de 80$ sur notre site lors des 30 derniers jours, un rabais de 5% sera automatiquement appliqué à votre commande!
+        </p>
+        <strong>Rabais fidélité 3 mois</strong>
+        <p>
+            Si vous avez commandé plus de 9 fois sur notre site lors des 3 deniers mois un rabais de 5% sera automatiquement appliqué à votre commande!
+        </p>
+
+        <p>
+          Ces rabais sont cumulables, mais ils ne peuvent être appliqués qu’aux clients inscrits sur le site
+        </p>
+      </div>
+      <div class="promo">
+        <img src="/img/Panier.jpg">
+        <h4>Paniers hebdomadaires – 10% de vitamines en plus!</h4>
+        <p>
+          Profitez de 10% minimum de réduction sur vos légumes et fruits en vous abonnant à nos paniers hebdomadaires: vous nous indiquer vos préférences et nous vous livrons chaque semaine des paniers composés par nos soins.
+        </p>
+        <p>Ce rabais n’est pas cumulable avec les rabais fidélités et paiement par acompte</p>
+        <a href="/">Abonnez-vous maintenant</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div id="produits" class="nouvelles">
+  <div class="container">
+    <h2><span>Les nouvelles de la ferme</span></h2>
+    <div class="info">
+      <div class="images">
+        <img src="/img/gingembre.jpg">
+        <img src="/img/bananier.jpg">
+        <img src="/img/papayer.jpg">
+        <img src="/img/boudin.jpg">
+        <img src="/img/lait.jpg">
+      </div>
+
+      <div class="inscription">
+          <div>
+            <h4>Inscrivez-vous ci-dessous pour être au courant de toutes nos activités.</h4>
+            <p>Adresse électronique:</p>
+            <input type="text" placeholder="Votre adresse de courriel">
+
+            <div>
+            <input type="checkbox" id="check1"><label for="check1">  Abonnez-vous à notre lettre d'information semestrielle</label> 
+            <p>  Tous les 6 mois, nous vous envoyons des informations sur JauneCongo, notre équipe et nos méthodes de travail</p>
+            </div>
+           
+
+            <div>
+            <input type="checkbox" id="check2"><label for="check2">  Abonnez-vous à notre courriel d'information hebdomadaire</label>
+            <p>Toutes les semaines, recevez un courriel vous présentant les nouveautés et promotions de la semaine</p></div>
+
+            
+            <a href="/">S'INSCRIRE</a>
+          </div>
+
+          <div>
+            <div>
+              <img src="/img/whatsapp.svg">
+            </div>
+            
+            <p>
+               <strong>Inscrivez-vous à notre groupe Whatsapp</strong>
+              Envoyez-nous un message Whatsapp au +243 81 23 25 230 et nous vous enverrons une invitation à notre groupe Whatsapp.
+            </p>
+           
+          </div>
+          
+      </div>
+
+      <div class="mesLettresInfo">
+        <h4>Et lisez ou relisez nos lettres d'informations!</h4>
+        <div class="lettreInfo">
+          <img src="/img/lettreInfo1.png">
+          <img src="/img/lettreInfo2.png">
+          <img src="/img/lettreInfo3.png">
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+
+
+
+<%- include('partials/footer') %>

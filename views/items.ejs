@@ -1,0 +1,62 @@
+<%- include('partials/header') %>
+
+<div class="container">
+  <div id="item">
+
+    <div class="col">
+      <img src=<%= produit.image %> alt="">
+    </div>
+
+    <div class="col">
+      <ul class="petit-menu" >
+        <li><a href="/">ACCUEIL</a></li>
+        <li><a href="/">AUTRES</a></li>
+      </ul>
+      <h3><%= produit.name %></h3>
+
+      <span class="sous-bar"></span>
+
+      <p class="para-qt">$ <span class="qt"><%= produit.prixKilo %></span>/Kilo</p>
+      <p class="para-qt">$ <span class="qt"><%= produit.prixBouquet %></span>/bouquet de 25 grammes</p>
+      <p class="para-qt">$ <span class="qt"><%= produit.prixBotte %></span>/botte de 500 grammes</p>
+
+      <p class="desc"><%= produit.description %></p>
+      <h6><%= produit.qteDispo %> en stock</h6>
+
+      <a class="control" href="#">+</a>
+      <input type="text" name="" value="1">
+      <a class="control" href="#">-</a>
+      <br>
+      <button type="button" name="button">AJOUTER AU PANIER</button>
+
+      <span class="line"> </span>
+
+      <p class="souspara">
+        Catégorie : Autres <br><br>
+        Vous aimez nos produits? Partagez notre page sur vos réseaux sociaux et obtenez 5% de réduction sur votre commande!
+      </p>
+      <br>
+      <a class="btn-social fb"> <span class="iconify" data-icon="brandico:facebook" data-inline="false"></span> Partager!</a>
+      <a class="btn-social lk"><span class="iconify" data-icon="bx:bxl-linkedin" data-inline="false"></span> Partager!</a>
+      <a class="btn-social tw"><span class="iconify" data-icon="ant-design:twitter-outlined" data-inline="false"></span> Partager!</a>
+
+      <ul class="social-icons">
+        <li><a href="#"><span class="iconify" data-icon="jam:facebook-circle" data-inline="false"></span></a></li>
+        <li><a href="#"><span class="iconify" data-icon="jam:twitter-circle" data-inline="false"></span></a></li>
+        <li><a href="#"><span class="iconify" data-icon="uil:envelope" data-inline="false"></span></a></li>
+        <li><a href="#"><span class="iconify" data-icon="typcn:social-pinterest-circular" data-inline="false"></span></a></li>
+        <li><a href="#"><span class="iconify" data-icon="ion:logo-linkedin" data-inline="false"></span></a></li>
+      </ul>
+
+    </div>
+
+    <div class="col">
+      <a class="nav" href=<%= `/items/${produit.id-1}` %>> <span class="iconify" data-icon="bx:bx-left-arrow-circle" data-inline="false"></span></a>
+      <a class="nav" href=<%= `/items/${produit.id+1}` %>><span class="iconify" data-icon="bx:bx-right-arrow-circle" data-inline="false"></span></a>
+    </div>
+
+
+  </div>
+</div>
+
+<%- include('partials/footer') %>

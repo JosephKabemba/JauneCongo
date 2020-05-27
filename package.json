@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "npm run start"
+  },
+  "dependencies": {
+    "express": "*",
+    "mysql": "*",
+    "ejs": "*"
+  }
+}
